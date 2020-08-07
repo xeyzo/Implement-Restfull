@@ -7,7 +7,7 @@ router.get("/", UsersController.getUser);
 router.post("/", UsersController.saveUser);
 
 router.get("/:id", UsersController.getUser);
-router.put("/:id", UsersController.updateUser);
+router.patch("/:id", UsersController.updateUser);
 
 router.delete("/:id", (req, res) => {
     res.send(`delete id ${req.params.id}`);

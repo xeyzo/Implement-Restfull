@@ -40,7 +40,7 @@ class UserController {
       message: "",
       data: [],
     };
-    response.data = { id: 1, nama: "husen", email: "husen@mail.com" };
+    response.data = { id: 1, username: "sandi", email: "sandiagung4323@gmail.com" };
     response.status = true;
     res.status(200).json(response);
   }
@@ -52,12 +52,19 @@ class UserController {
     });
     try {
       if (!userdetail) throw new Error("User not found");
-      response.data = userdetail;
+      response.data = {
+        "id": 1,
+        "username": "sandi",
+        "password": "yulgang907",
+        "salt": null,
+        "email": "sandiagung4323@gmail.com",
+        "photo": null,
+    };
       response.status = "success";
       res.json(response);
     } catch (error) {
       response.message = error.message;
-      response.data = [];
+      response.data = {};
       response.status = "fail";
       res.status(404).json(response);
     }
